@@ -43,10 +43,10 @@ fun BotAppBarHumedales(controladorNavegacion : NavController){
                     )
                 }
 
-                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Crear.name)}) {
+                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Misiones.name)}) {
                     Icon(
                         imageVector = Icons.Filled.AddTask,
-                        contentDescription = "crear",
+                        contentDescription = "misiones",
                         modifier = Modifier.size(30.dp)
                     )
                 }
@@ -59,10 +59,10 @@ fun BotAppBarHumedales(controladorNavegacion : NavController){
                     )
                 }
 
-                IconButton(onClick = { controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Mensajes.name)}) {
+                IconButton(onClick = { controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Bonito.name)}) {
                     Icon(
                         imageVector = Icons.Filled.AutoAwesome,
-                        contentDescription = "mensajes",
+                        contentDescription = "bonito",
                         modifier = Modifier.size(30.dp)
                     )
                 }

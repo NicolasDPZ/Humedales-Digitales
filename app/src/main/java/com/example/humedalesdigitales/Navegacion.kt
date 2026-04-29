@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.humedalesdigitales.pantallas.Bonito
 import com.example.humedalesdigitales.pantallas.Home
 import com.example.humedalesdigitales.pantallas.Juegos
 import com.example.humedalesdigitales.pantallas.Mapa
@@ -23,7 +24,7 @@ fun Navegacion() {
         composable(route = Pantalla.Juegos.name) {
             Juegos(controladorNavegacion = controladorNavegacion)
         }
-        composable(route = Pantalla.Juegos.name) {
+        composable(route = Pantalla.Mapa.name) {
             Mapa(controladorNavegacion = controladorNavegacion)
         }
         composable(route = Pantalla.Perfil.name) {
@@ -31,6 +32,9 @@ fun Navegacion() {
         }
         composable(route = Pantalla.Misiones.name) {
             Misiones(controladorNavegacion = controladorNavegacion)
+        }
+        composable(route = Pantalla.Bonito.name) {
+            Bonito(controladorNavegacion = controladorNavegacion)
         }
 
 
