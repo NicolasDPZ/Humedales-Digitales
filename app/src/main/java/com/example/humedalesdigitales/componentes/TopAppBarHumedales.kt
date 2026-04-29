@@ -16,14 +16,27 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.currentBackStackEntryAsState
+import com.example.humedalesdigitales.Pantalla
 import com.example.humedalesdigitales.R
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopAppBarHumedales() {
+fun TopAppBarHumedales(navController: NavController) {
+
+    val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
+
     CenterAlignedTopAppBar(
-        title = { Text(text = "Humedales Digitales",
+        title = { Text(text = when (currentRoute){
+            Pantalla.Home.name -> "Humedales Digitales"
+            Pantalla.Mapa.name -> "Mapa Humedales"
+            Pantalla.Misiones.name -> "Especies"
+            Pantalla.Juegos.name -> "Juegos"
+            Pantalla.Perfil.name -> "Perfil"
+            else -> "App"
+        },
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
         )},

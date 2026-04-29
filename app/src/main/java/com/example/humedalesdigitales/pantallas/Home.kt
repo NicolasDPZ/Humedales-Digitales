@@ -44,7 +44,7 @@ import kotlinx.coroutines.delay
 fun Home(modifier : Modifier = Modifier, controladorNavegacion: NavController){
     Scaffold(
         containerColor = (Color(0xFFF0E97A)),
-        topBar = { TopAppBarHumedales() },
+        topBar = { TopAppBarHumedales(controladorNavegacion) },
         bottomBar ={ BotAppBarHumedales(controladorNavegacion) }
     ) { paddingValues ->
         Column(
@@ -81,7 +81,9 @@ fun Home(modifier : Modifier = Modifier, controladorNavegacion: NavController){
                 modifier = modifier.padding()
 
             ){
-                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.pantallas.Home.name)}) {
+                IconButton(onClick = {
+                    controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Home.name)
+                }) {
                     Icon(
                         imageVector = Icons.Filled.Bedtime,
                         contentDescription = "home",
@@ -90,7 +92,7 @@ fun Home(modifier : Modifier = Modifier, controladorNavegacion: NavController){
                 }
                 Spacer(modifier = Modifier.width(20.dp))
 
-                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.pantallas.Juegos.name)}) {
+                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Juegos.name)}) {
                     Icon(
                         imageVector = Icons.Filled.SportsEsports,
                         contentDescription = "home",
@@ -99,7 +101,7 @@ fun Home(modifier : Modifier = Modifier, controladorNavegacion: NavController){
                 }
                 Spacer(modifier = Modifier.width(20.dp))
 
-                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.pantallas.Home.name)}) {
+                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Home.name)}) {
                     Icon(
                         imageVector = Icons.Filled.Analytics,
                         contentDescription = "home",

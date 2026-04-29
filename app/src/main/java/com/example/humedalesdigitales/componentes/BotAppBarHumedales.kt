@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.AddTask
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.LocationOn
@@ -33,7 +35,7 @@ fun BotAppBarHumedales(controladorNavegacion : NavController){
                 verticalAlignment = Alignment.CenterVertically,
                 ) {
 
-                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.pantallas.Mapa.name)} ) {
+                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Mapa.name)} ) {
                     Icon(
                         imageVector = Icons.Filled.LocationOn,
                         contentDescription = "mapita",
@@ -41,15 +43,15 @@ fun BotAppBarHumedales(controladorNavegacion : NavController){
                     )
                 }
 
-                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.pantallas.Crear.name)}) {
+                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Crear.name)}) {
                     Icon(
-                        imageVector = Icons.Filled.Add,
+                        imageVector = Icons.Filled.AddTask,
                         contentDescription = "crear",
                         modifier = Modifier.size(30.dp)
                     )
                 }
 
-                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.pantallas.Home.name)}) {
+                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Home.name)}) {
                     Icon(
                         imageVector = Icons.Filled.Home,
                         contentDescription = "home",
@@ -57,15 +59,15 @@ fun BotAppBarHumedales(controladorNavegacion : NavController){
                     )
                 }
 
-                IconButton(onClick = { controladorNavegacion.navigate(route = com.example.humedalesdigitales.pantallas.Mensajes.name)}) {
+                IconButton(onClick = { controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Mensajes.name)}) {
                     Icon(
-                        imageVector = Icons.Filled.Email,
+                        imageVector = Icons.Filled.AutoAwesome,
                         contentDescription = "mensajes",
                         modifier = Modifier.size(30.dp)
                     )
                 }
 
-                IconButton(onClick = {controladorNavegacion.navigate(route= com.example.humedalesdigitales.pantallas.Perfil.name)}) {
+                IconButton(onClick = {controladorNavegacion.navigate(route= com.example.humedalesdigitales.Pantalla.Perfil.name)}) {
                     Icon(
                         imageVector = Icons.Filled.AccountCircle,
                         contentDescription = "perfil",

@@ -16,14 +16,12 @@ import com.example.humedalesdigitales.componentes.BotAppBarHumedales
 import com.example.humedalesdigitales.componentes.TopAppBarHumedales
 
 @Composable
-fun Juegos(modifier: Modifier = Modifier, controladorNavegacion: NavController) {
-
+fun Perfil(modifier : Modifier = Modifier, controladorNavegacion: NavController){
     Scaffold(
         containerColor = (Color(0xFFF0E97A)),
         topBar = { TopAppBarHumedales(controladorNavegacion) },
         bottomBar ={ BotAppBarHumedales(controladorNavegacion) }
     ) { paddingValues ->
-
         Column(
 
             modifier = Modifier.fillMaxSize()
@@ -32,14 +30,17 @@ fun Juegos(modifier: Modifier = Modifier, controladorNavegacion: NavController) 
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
+
         }
 
 
     }
 }
 
+
+
 @Composable
 @Preview(showBackground = true)
-fun prevjuegos(){
-    Juegos(controladorNavegacion = rememberNavController())
+fun prevperfil(){
+    Perfil(controladorNavegacion = rememberNavController())
 }

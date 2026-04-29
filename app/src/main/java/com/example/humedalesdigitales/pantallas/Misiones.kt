@@ -9,21 +9,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.example.humedalesdigitales.componentes.BotAppBarHumedales
 import com.example.humedalesdigitales.componentes.TopAppBarHumedales
 
 @Composable
-fun Juegos(modifier: Modifier = Modifier, controladorNavegacion: NavController) {
-
+fun Misiones(modifier : Modifier = Modifier, controladorNavegacion: NavController){
     Scaffold(
         containerColor = (Color(0xFFF0E97A)),
         topBar = { TopAppBarHumedales(controladorNavegacion) },
         bottomBar ={ BotAppBarHumedales(controladorNavegacion) }
     ) { paddingValues ->
-
         Column(
 
             modifier = Modifier.fillMaxSize()
@@ -32,14 +28,4 @@ fun Juegos(modifier: Modifier = Modifier, controladorNavegacion: NavController) 
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-        }
-
-
-    }
-}
-
-@Composable
-@Preview(showBackground = true)
-fun prevjuegos(){
-    Juegos(controladorNavegacion = rememberNavController())
-}
+        }}}
