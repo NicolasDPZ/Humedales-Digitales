@@ -25,19 +25,7 @@ import com.example.humedalesdigitales.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopAppBarHumedales(navController: NavController) {
-
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentRoute = navBackStackEntry?.destination?.route
-
-    val titulo = when (currentRoute) {
-        Pantalla.Home.name -> "Humedales Digitales"
-        Pantalla.Mapa.name -> "Mapa Humedales"
-        Pantalla.Misiones.name -> "Especies"
-        Pantalla.Juegos.name -> "Juegos"
-        Pantalla.Perfil.name -> "Perfil"
-        else -> "Humedales Digitales"
-    }
+fun TopAppBarHumedales(titulo: String) {
 
     CenterAlignedTopAppBar(
         title = {

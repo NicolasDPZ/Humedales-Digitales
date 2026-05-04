@@ -16,6 +16,7 @@ import androidx.compose.material.icons.filled.Analytics
 import androidx.compose.material.icons.filled.Bedtime
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.SportsEsports
+import androidx.compose.material.icons.filled.WbSunny
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
@@ -35,93 +36,96 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.humedalesdigitales.componentes.BotAppBarHumedales
 import com.example.humedalesdigitales.R
+import com.example.humedalesdigitales.componentes.BotAppBarHumedales
 import com.example.humedalesdigitales.componentes.TopAppBarHumedales
 import kotlinx.coroutines.delay
 
 @Composable
-fun Home(modifier : Modifier = Modifier, controladorNavegacion: NavController){
+fun Dormida(modifier: Modifier = Modifier, controladorNavegacion: NavController) {
     Scaffold(
-        containerColor = (Color(0xFFF0E97A)),
+        containerColor = Color(0xFF1A237E), // azul oscuro noche
         topBar = { TopAppBarHumedales("Humedales Digitales") },
-        bottomBar ={ BotAppBarHumedales(controladorNavegacion) }
+        bottomBar = { BotAppBarHumedales(controladorNavegacion) }
     ) { paddingValues ->
         Column(
-
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
                 .padding(paddingValues),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Row(
-                modifier = modifier.padding()
-            )
-            { Icon(
-                imageVector = Icons.Filled.Favorite,
-                contentDescription = "corazon",
-                tint = Color.Red,
-                modifier = Modifier.size(30.dp)
-            )
-                BarraDeVida()
+            Row(modifier = modifier.padding()) {
+                Icon(
+                    imageVector = Icons.Filled.Favorite,
+                    contentDescription = "corazon",
+                    tint = Color.Red,
+                    modifier = Modifier.size(30.dp)
+                )
+                BarraDeVidaDormido()
             }
+
             Spacer(modifier = Modifier.height(20.dp))
 
-
+            // Cambia "rana" por tu imagen de rana dormida
             Image(
-                painter = painterResource(id = R.drawable.rana),
-                contentDescription = "imagen",
+                painter = painterResource(id = R.drawable.dormida),
+                contentDescription = "rana dormida",
                 modifier = Modifier.fillMaxWidth(0.75f),
                 contentScale = ContentScale.Crop
             )
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            Row(
-                modifier = modifier.padding()
-
-            ){
+            Row(modifier = modifier.padding()) {
+                // Luna → vuelve a Home (modo día)
                 IconButton(onClick = {
                     controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Home.name)
                 }) {
                     Icon(
-                        imageVector = Icons.Filled.Bedtime,
-                        contentDescription = "home",
+                        imageVector = Icons.Filled.WbSunny, // sol para volver al día
+                        contentDescription = "despertar",
+                        tint = Color.Yellow,
                         modifier = Modifier.size(60.dp)
                     )
                 }
+
                 Spacer(modifier = Modifier.width(20.dp))
 
-                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Juegos.name)}) {
+                IconButton(onClick = {
+                    controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Juegos.name)
+                }) {
                     Icon(
                         imageVector = Icons.Filled.SportsEsports,
-                        contentDescription = "home",
+                        contentDescription = "juegos",
+                        tint = Color.White,
                         modifier = Modifier.size(60.dp)
                     )
                 }
+
                 Spacer(modifier = Modifier.width(20.dp))
 
-                IconButton(onClick = {controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Home.name)}) {
+                IconButton(onClick = {
+                    controladorNavegacion.navigate(route = com.example.humedalesdigitales.Pantalla.Home.name)
+                }) {
                     Icon(
                         imageVector = Icons.Filled.Analytics,
-                        contentDescription = "home",
+                        contentDescription = "analytics",
+                        tint = Color.White,
                         modifier = Modifier.size(60.dp)
                     )
                 }
-
             }
         }
     }
 }
 
 @Composable
-fun BarraDeVida() {
-
+fun BarraDeVidaDormido() {
     var vida by remember { mutableStateOf(1f) }
-
     LaunchedEffect(Unit) {
         while (vida > 0f) {
-            delay(1000) // cada 100 ms
+            delay(100)
             vida -= 0.01f
         }
     }
@@ -132,13 +136,11 @@ fun BarraDeVida() {
             .height(30.dp),
         color = Color.Red,
         trackColor = Color.Gray
-
     )
 }
 
-
 @Composable
 @Preview(showBackground = true)
-fun prevhome(){
-    Home(controladorNavegacion = rememberNavController())
+fun prevdormido() {
+    Dormida(controladorNavegacion = rememberNavController())
 }

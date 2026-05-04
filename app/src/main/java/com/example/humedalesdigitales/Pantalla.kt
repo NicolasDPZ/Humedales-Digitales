@@ -1,5 +1,5 @@
 package com.example.humedalesdigitales
 
 enum class Pantalla {
-    Juegos, Home, Mapa, Perfil, Misiones, Bonito
+    Juegos, Home, Mapa, Perfil, Misiones, Bonito, Parejas, AtrapaBasura
 }

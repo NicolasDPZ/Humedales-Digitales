@@ -4,12 +4,14 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.humedalesdigitales.pantallas.AtrapaBasura
 import com.example.humedalesdigitales.pantallas.Bonito
 import com.example.humedalesdigitales.pantallas.Home
 import com.example.humedalesdigitales.pantallas.Juegos
 import com.example.humedalesdigitales.pantallas.Mapa
 import com.example.humedalesdigitales.pantallas.Misiones
 import com.example.humedalesdigitales.pantallas.Perfil
+import com.example.humedalesdigitales.pantallas.Parejas
 
 @Composable
 fun Navegacion() {
@@ -35,6 +37,12 @@ fun Navegacion() {
         }
         composable(route = Pantalla.Bonito.name) {
             Bonito(controladorNavegacion = controladorNavegacion)
+        }
+        composable(route = Pantalla.Parejas.name ) {
+            Parejas(controladorNavegacion = controladorNavegacion)
+        }
+        composable(route = Pantalla.AtrapaBasura.name ) {
+            AtrapaBasura(controladorNavegacion = controladorNavegacion)
         }
 
 
